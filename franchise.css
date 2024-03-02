@@ -349,11 +349,20 @@ textarea {
 
 /* Футер */
 
+.wrapper {
+    max-width: 1490px;
+    width: 100%;
+    padding: 0 2rem;
+    margin: 0 auto;
+}
+
 footer {
     width: 100%;
+    max-width: 1490px;
     height: auto;
     background-color: #f2f3f5;
     border-radius: 25px 25px 0 0;
+
 }
 
 .footer__info {
@@ -406,6 +415,9 @@ footer {
     margin-right: 30px;
 }
 
+.f-app {
+    display: none;
+}
 
 
 @media (min-width: 660px) {
@@ -441,6 +453,174 @@ footer {
     }
 }
 
+
+
+@media (min-width: 1000px) {
+
+    /* Хедер */
+
+    header {
+        justify-content: space-between;
+    }
+
+    .email {
+        font-size: 1vw;
+    }
+
+    .logo__email {
+        width: 4vw;
+    }
+
+    .header__logo {
+        display: block;
+    }
+
+    /* мэин */
+
+    main {
+        margin-top: 10vw;
+    }
+
+    .main__text {
+        font-size: 4vw;
+        font-weight: 100;
+        line-height: 1;
+    }
+
+    .main__subtitle {
+        font-size: 2vw;
+        line-height: 1;
+    }
+
+    .main__svg {
+        width: 6vw;
+    }
+
+    .br-main__text {
+        display: none;
+    }
+
+    .br-affiliate {
+        display: none;
+    }
+
+    .main__button {
+        background: #5630ff;
+        color: #fff;
+        padding: 1.5vw 3vw 1.5vw 3vw;
+        margin-top: 3vw;
+        transition: .1s;
+        font-weight: 100;
+        font-size: 1vw;
+    }
+
+    .affiliate {
+        font-size: 1.8vw;
+        margin-top: 10vw;
+    }
+
+    /* condition */
+
+    .conditions {
+        padding: 0 17vw;
+    }
+
+    .condition-item {
+        height: 13vw;
+    }
+
+    .condition-item__text {
+        font-size: 1.5vw;
+        font-weight: 300;
+        width: 38vw;
+    }
+
+    .condition-item__title {
+        font-size: 4.5vw;
+        font-weight: 100;
+    }
+
+    /* investment */
+
+    .investment {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .investment-item__title {
+        font-size: 1.5vw;
+    }
+
+    .investment-item__text {
+        font-size: 4.5vw;
+        margin: 0 0 3vw;
+    }
+
+    
+
+
+
+
+    /* Футер */
+
+    footer {
+        margin: 70px 0 30px;
+        border-radius: 25px;
+    }
+
+    .f-app {
+        display: flex;
+        flex: 1 1 auto;
+
+        align-items: flex-end;
+    }
+
+    .f-app__info {
+        margin-right: 50px;
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+        padding: 45px 0;
+    }
+
+    .f-app__info-title {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 1.15;
+        max-width: 300px;
+    }
+
+    .f-app__info-links {
+        padding: 30px 0 0;
+        margin-top: auto;
+    }
+
+    .app-links {
+        display: grid;
+        grid-gap: 16px;
+        gap: 16px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer__info {
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: #f2f3f5;
+        border-radius: 25px;
+    }
+
+    .f-app__img {
+        margin-top: -75px;
+    }
+
+    .f-app__img {
+        max-width: 260px;
+    }
+
+    .f-app__img img {
+        max-width: 100%;
+    }
+}
 
 
 
