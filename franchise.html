@@ -148,25 +148,30 @@
         <div class="form__block">
             <div class="form__item">
                 <input class="form__input" type="text">
+                <p class="validation-message"></p>
                 <span>Имя</span>
             </div>
             <div class="form__item">
                 <input class="form__input" type="text">
+                <p class="validation-message"></p>
                 <span>Фамилия</span>
             </div>
 
             <div class="form__item">
                 <input class="form__input" type="text">
+                <p class="validation-message"></p>
                 <span>Город</span>
             </div>
 
             <div class="form__item">
-                <input class="form__input" type="text">
+                <input class="form__input" type="email">
+                <p class="validation-message"></p>
                 <span>Почта</span>
             </div>
 
             <div class="form__item">
                 <input class="form__input" type="number">
+                <p class="validation-message"></p>
                 <span>Телефон</span>
             </div>
 
@@ -183,35 +188,6 @@
             <button class="main__button form__button">ОСТАВИТЬ ЗАЯВКУ</button>
         </div>
     </form>
-
-
-    <!-- Добавление ошибки если не заполено поле -->
-
-
-    <script>
-        const formItems = document.querySelectorAll('.form__item:not(:last-child) input');
-        const button = document.querySelector('.main__button.form__button');
-
-        formItems.forEach(input => {
-            input.addEventListener('input', () => {
-                if (input.classList.contains('invalid')) {
-                    input.classList.remove('invalid');
-                }
-            });
-        });
-
-        button.addEventListener('click', () => {
-            let isFormValid = true;
-
-            formItems.forEach(input => {
-                if (input.value.trim() === '') {
-                    input.classList.add('invalid');
-                    isFormValid = false;
-                }
-            });
-        });
-    </script>
-    
 
     <div class="team">
         <div class="team__img"></div>
@@ -278,6 +254,48 @@
             </div>
         </footer>
     </div>
+
+
+    <!-- Добавление ошибки если не заполено поле -->
+
+
+<script>
+    const formItems = document.querySelectorAll('.form__item:not(:last-child) input');
+    const button = document.querySelector('.form__button');
+
+    formItems.forEach(input => {
+        const validationMessage = input.nextElementSibling;
+
+        input.addEventListener('input', () => {
+            if (input.type === 'email' && !input.value.trim().match(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/)) {
+                input.classList.add('invalid');
+                validationMessage.textContent = 'Пожалуйста введите корректный адрес электронной почты';
+            } else if (input.value.trim() === '') {
+                input.classList.add('invalid');
+                validationMessage.textContent = 'Пожалуйста заполните это поле';
+            } else {
+                input.classList.remove('invalid');
+                validationMessage.textContent = '';
+            }
+        });
+    });
+
+    button.addEventListener('click', () => {
+        let isFormValid = true;
+
+        formItems.forEach(input => {
+            if (input.value.trim() === '') {
+                input.classList.add('invalid');
+                input.nextElementSibling.textContent = 'Пожалуйста заполните это поле';
+                isFormValid = false;
+            } else if (input.type === 'email' && !input.value.trim().match(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/)) {
+                input.classList.add('invalid');
+                input.nextElementSibling.textContent = 'Пожалуйста введите корректный адрес электронной почты';
+                isFormValid = false;
+            }
+        });
+    });
+</script>
 
     <!-- Убираем текст если в input или textarea что-то написано -->
 

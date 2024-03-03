@@ -484,6 +484,13 @@ footer {
 
 }
 
+.validation-message{
+    font-size: 1vw;
+    color: red;
+    padding-left: 4vw;
+    margin-bottom: 1vw;
+}
+
 
 
 @media (min-width: 1000px) {
