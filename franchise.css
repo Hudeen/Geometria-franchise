@@ -11,6 +11,12 @@ svg {
     max-width: 100%;
 } */
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 .br_none {
     display: none;
 }
@@ -108,11 +114,6 @@ main {
 .main__button:hover {
     cursor: pointer;
     background: #442ab5;
-}
-
-.wrapper {
-    display: flex;
-    padding: 100px;
 }
 
 /* affiliate */
@@ -290,7 +291,7 @@ form {
     font-size: 3vw;
     font-weight: 300;
     background: #F5F5F5;
-    border-radius: 5vw;
+    border-radius: 3vw;
     height: 13vw;
     padding-left: 5vw;
     padding-top: 4.5vw;
@@ -338,13 +339,43 @@ textarea {
 }
 
 .team {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    height: 900px;
-    border-radius: 25px;
+    width: 100%;
+    height: 50vw;
+    display: flex;
+    justify-content: center;
+}
 
-    background-image: url(./team.png);
+.team__img {
+    height: 100%;
+    width: 75%;
+    border-radius: 2vw;
+    background-image: url('./team.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.picture {
+    width: 100%;
+    height: 50vw;
+    display: flex;
+    justify-content: center;
+    margin: 10vw 0;
+}
+
+.picture__img {
+    height: 100%;
+    width: 75%;
+    border-radius: 2vw;
+    background-size: cover;
+    background-position: center;
+}
+
+.red {
+    background-image: url('./red.jpg');
+}
+
+.blue {
+    background-image: url('./blue.jpg');
 }
 
 /* Футер */
@@ -352,8 +383,7 @@ textarea {
 .wrapper {
     max-width: 1490px;
     width: 100%;
-    padding: 0 2rem;
-    margin: 0 auto;
+    margin-top: 10vw;
 }
 
 footer {
@@ -451,6 +481,7 @@ footer {
     .f-copy__text {
         text-align: left;
     }
+
 }
 
 
@@ -501,6 +532,14 @@ footer {
     }
 
     .br-affiliate {
+        display: none;
+    }
+
+    .br-support {
+        display: none;
+    }
+
+    .br-form__title {
         display: none;
     }
 
@@ -556,12 +595,91 @@ footer {
         margin: 0 0 3vw;
     }
 
-    
+    /* support */
+
+    .support {
+        padding: 0 7vw;
+    }
+
+    .support__title {
+        font-size: 2.5vw;
+        margin-bottom: 7vw;
+    }
+
+    .support__block {
+        display: grid;
+        grid-gap: 3em;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        padding: 0 20px 0 20px;
+    }
+
+    .support-item__title {
+        font-size: 2vw;
+        font-weight: 400;
+        margin-bottom: 2vw;
+    }
+
+    .support-item__text {
+        font-weight: 300;
+        font-size: 1.5vw;
+    }
+
+
+    /* form */
+
+    form {
+        margin-top: 10vw;
+    }
+
+    .form__item {
+        width: 70%;
+    }
+
+    .form__item span {
+        position: absolute;
+        top: 1.7vw;
+        left: 4.2vw;
+        font-weight: 300;
+        font-size: 1.7vw;
+    }
+
+    .form__input {
+        height: 6vw;
+        padding-top: 0;
+        padding-left: 4vw;
+        font-size: 2vw;
+    }
+
+    .form__svg {
+        width: 7vw;
+    }
+
+    .form__title {
+        margin-top: 3.5vw;
+        font-size: 2vw;
+    }
+
+    textarea {
+        height: 15vw !important;
+        padding-top: 1.5vw !important;
+    }
+
+    /* team */
+
+
+
+
 
 
 
 
     /* Футер */
+
+    .wrapper {
+        padding: 0 2rem;
+        margin: 0 auto;
+    }
 
     footer {
         margin: 70px 0 30px;
@@ -637,4 +755,19 @@ footer {
     header {
         padding: 0 10vw;
     }
+}
+
+.form__input.invalid {
+    border: 1px solid red;
+}
+
+.form__message {
+    color: red;
+    font-size: 12px;
+    margin: 0;
+    visibility: hidden;
+}
+
+.form__item.invalid .form__message {
+    visibility: visible;
 }
